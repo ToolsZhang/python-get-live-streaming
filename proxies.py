@@ -6,8 +6,11 @@ import request_method
 import redis
 
 # single 单通道 ,multi 多通道
-IP_CHANNEL = 'single' 
+IP_CHANNEL = 'single'
+
+# 全局代理参数 
 global_proxies = ""
+
 '''
     代理ip获取
 '''
@@ -121,13 +124,6 @@ def get_random_ip(ip_list_):
     except ValueError:
         print(ValueError)
     return proxies
-
-'''
-测试list_ip可用性,使用百度测试
-'''
-def test_list_ip(proxies):
-    rep = request_method.get(url='http://icanhazip.com', proxies=proxies)
-    print(rep)
 
 '''
 测试ip可用性,使用百度测试
